@@ -144,9 +144,14 @@ $(function () {
     styleSliderIndex = (styleSliderIndex + 1) % styleSliderCount; // 순환
 
     // 배경 변경
-    const styleBgImage = `url("../img/main/style2-${styleSliderIndex + 1}.png")`;
-    $('#style').css('background-image', styleBgImage);
+    // 배경 변경 전 이미지 미리 로드
+    const styleBgImage = `../img/main/style2-${styleSliderIndex + 1}.png`;
+    const img = new Image();
+    img.src = styleBgImage;
 
+    img.onload = function () {
+      $('#style').css('background-image', `url("${styleBgImage}")`);
+    };
     // active 클래스 갱신
     updateActiveClass();
   });
