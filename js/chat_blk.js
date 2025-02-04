@@ -18,7 +18,7 @@ $(function () {
   //---------------- blackfriday
 
   // 카운트 다운 설정
-  const blkDayTarget = new Date('2025-01-01T00:00:00');
+  const blkDayTarget = new Date('2025-03-01T00:00:00');
 
 
   const BlkDay = document.querySelector('#blf_count>.day>span');
